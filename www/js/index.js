@@ -48,20 +48,12 @@ var app = {
     }
 };
 
-function rotate()
-{
-    alert('Entra');
-    var angle = 0, img = document.getElementById('Knob1container');
-    document.getElementById('button').onclick = function() {
-        angle = (angle+90)%360;
-        img.className = "rotate"+angle;
-    }
-}
 
-var looper;
+var looper=null;
 var degrees = 0;
 function rotateAnimation(el,speed){
     var elem = document.getElementById(el);
+/*
     if(navigator.userAgent.match("Chrome")){
         elem.style.WebkitTransform = "rotate("+degrees+"deg)";
     } else if(navigator.userAgent.match("Firefox")){
@@ -73,6 +65,8 @@ function rotateAnimation(el,speed){
     } else {
         elem.style.transform = "rotate("+degrees+"deg)";
     }
+*/
+    elem.style.transform = "rotate("+degrees+"deg)";
     looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
     degrees++;
     if(degrees > 359){
@@ -120,6 +114,18 @@ function rotateDOWN(el){
     }
 }
 */
+
+/*
+ function rotate()
+ {
+ alert('Entra');
+ var angle = 0, img = document.getElementById('Knob1container');
+ document.getElementById('button').onclick = function() {
+ angle = (angle+90)%360;
+ img.className = "rotate"+angle;
+ }
+ }
+ */
 
 /* ------------- TOUCH MOVE (CANCELAR) -------------*/
 //document.getElementById('Knob00').addEventListener('touchmove',function(event) {
