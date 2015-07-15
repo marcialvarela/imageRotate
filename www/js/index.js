@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+/*
 var app = {
     // Application Constructor
     initialize: function() {
@@ -47,9 +48,9 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+*/
 
-
-var looper=null;
+var looper;
 var degrees = 0;
 function rotateAnimation(el,speed){
     var elem = document.getElementById(el);
@@ -66,7 +67,8 @@ function rotateAnimation(el,speed){
         elem.style.transform = "rotate("+degrees+"deg)";
     }
 */
-    elem.style.transform = "rotate("+degrees+"deg)";
+    //elem.style.transform = "rotate("+degrees+"deg)";
+    elem.style.WebkitTransform = "rotate("+degrees+"deg)";
     looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
     degrees++;
     if(degrees > 359){
